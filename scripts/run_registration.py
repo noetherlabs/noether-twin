@@ -15,7 +15,6 @@ import importlib.util
 import json
 import os
 import platform
-import resource
 import signal
 import stat
 import subprocess
@@ -275,6 +274,47 @@ def group_exists(pgid):
     return True
 
 
+class OwnedChild:
+    """Single reaper for one Popen child and its kernel-reported usage.
+
+    RUSAGE_CHILDREN also includes earlier children and monitoring commands.
+    wait4 instead binds the high-water mark to this PID. This still includes
+    memory attributed by the OS before exec; it is not a post-exec measurement.
+    Only this wrapper may poll or wait on the underlying Popen instance.
+    """
+
+    def __init__(self, command, **kwargs):
+        require(hasattr(os, "wait4"), "wait4_unavailable")
+        self.highwater_rss_bytes = None
+        self._process = subprocess.Popen(command, **kwargs)
+        self.pid = self._process.pid
+
+    @property
+    def returncode(self):
+        return self._process.returncode
+
+    def poll(self):
+        if self.returncode is None:
+            try:
+                pid, status, usage = os.wait4(self.pid, os.WNOHANG)
+            except ChildProcessError as error:
+                raise GuardError("owned_child_usage_unavailable") from error
+            if pid:
+                require(pid == self.pid, "unexpected_wait_pid")
+                self._process.returncode = os.waitstatus_to_exitcode(status)
+                self.highwater_rss_bytes = usage.ru_maxrss * (1 if sys.platform == "darwin" else 1024)
+        return self.returncode
+
+    def wait(self, timeout):
+        deadline = time.monotonic() + timeout
+        while self.poll() is None:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise subprocess.TimeoutExpired(self._process.args, timeout)
+            time.sleep(min(0.05, remaining))
+        return self.returncode
+
+
 def terminate_group(child):
     for sig, grace in ((signal.SIGTERM, 3), (signal.SIGKILL, 3)):
         try:
@@ -400,8 +440,8 @@ def supervise(output, command, *, environment, identity, minimum_free, reserve_p
         env.update(TMPDIR=str(runtime / "tmp"), XDG_CACHE_HOME=str(runtime / "cache"),
                    JAX_COMPILATION_CACHE_DIR=str(runtime / "jax-cache"), MPLCONFIGDIR=str(runtime / "mpl-cache"))
         with (runtime / "run.log").open("xb") as log:
-            child = subprocess.Popen(command, cwd=output, env=env, stdout=log, stderr=subprocess.STDOUT,
-                                     start_new_session=True)
+            child = OwnedChild(command, cwd=output, env=env, stdout=log, stderr=subprocess.STDOUT,
+                               start_new_session=True)
             _write_json(runtime / "owned-process.json", {"pid": child.pid, "pgid": child.pid})
             while child.poll() is None:
                 guard()
@@ -421,8 +461,14 @@ def supervise(output, command, *, environment, identity, minimum_free, reserve_p
             except BaseException:
                 reason = (reason or "cleanup") + ";owned_group_survived_cleanup"
         absent = child is None or not group_exists(child.pid)
-        highwater = resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss * (1 if sys.platform == "darwin" else 1024)
-        if highwater > limits.rss_bytes:
+        if child is not None:
+            try:
+                child.wait(timeout=1)
+                require(child.highwater_rss_bytes is not None, "owned_child_usage_unavailable")
+            except BaseException:
+                reason = (reason or "cleanup") + ";owned_child_usage_unavailable"
+        highwater = child.highwater_rss_bytes if child is not None else None
+        if highwater is not None and highwater > limits.rss_bytes:
             reason = (reason or "final") + ";child_highwater_rss_limit"
         try:
             final = inventory(runtime)
@@ -445,6 +491,7 @@ def supervise(output, command, *, environment, identity, minimum_free, reserve_p
                    "reason": reason, "returncode": child.returncode if child else None,
                    "owned_pgid": child.pid if child else None, "group_absent": absent,
                    "elapsed_seconds": elapsed, "peak_group_rss_bytes": peak, "child_highwater_rss_bytes": highwater,
+                   "child_highwater_rss_scope": "wait4_owned_pid",
                    "minimum_free_bytes": free_minimum, "evidence": evidence, "scientific_promotion": False,
                    "command": command_identity,
                    "runtime_before_receipt": {key: final[key] for key in ("logical", "allocated")},

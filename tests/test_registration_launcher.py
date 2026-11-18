@@ -5,7 +5,9 @@ import hashlib
 import importlib.util
 import json
 import os
+import signal
 import stat
+import subprocess
 import sys
 from pathlib import Path
 from types import SimpleNamespace
@@ -63,7 +65,9 @@ def test_competing_launcher_lock_refuses_before_output(tmp_path, monkeypatch):
 
 def test_success_retains_packet_identity_and_terminal_receipt(tmp_path):
     output, result = run_child(tmp_path, TINY)
-    assert result["status"] == "completed" and result["returncode"] == 0
+    assert result["status"] == "completed" and result["returncode"] == 0, result
+    assert result["child_highwater_rss_scope"] == "wait4_owned_pid"
+    assert 0 < result["child_highwater_rss_bytes"] <= 256 * runner.MIB, result
     assert (output / "packet/retained.txt").read_text() == "evidence"
     assert result["evidence"] == {"synthetic_packet": True}
     assert result["command"]["purpose"] == "synthetic_guard_check"
@@ -123,6 +127,84 @@ def test_sampled_rss_limit_stops_owned_child(tmp_path, monkeypatch):
     assert result["status"] == "stopped" and "group_rss_limit" in result["reason"]
 
 
+@pytest.mark.parametrize("status,returncode", [(7 << 8, 7), (signal.SIGTERM, -signal.SIGTERM)])
+def test_owned_child_captures_usage_once_before_popen_can_reap(monkeypatch, status, returncode):
+    process = SimpleNamespace(pid=12345, args=["synthetic"], returncode=None)
+    monkeypatch.setattr(runner.subprocess, "Popen", lambda *args, **kwargs: process)
+    replies = iter([(0, 0, None), (process.pid, status, SimpleNamespace(ru_maxrss=1234))])
+    calls = []
+
+    def wait4(pid, flags):
+        calls.append((pid, flags))
+        return next(replies)
+
+    monkeypatch.setattr(runner.os, "wait4", wait4)
+    child = runner.OwnedChild(["synthetic"])
+    assert child.poll() is None and child.highwater_rss_bytes is None
+    assert child.wait(timeout=1) == returncode
+    assert child.poll() == returncode and process.returncode == returncode
+    assert child.highwater_rss_bytes == 1234 * (1 if sys.platform == "darwin" else 1024)
+    assert calls == [(process.pid, os.WNOHANG)] * 2
+
+
+def test_owned_child_missing_usage_fails_closed(monkeypatch):
+    process = SimpleNamespace(pid=12345, args=["synthetic"], returncode=None)
+    monkeypatch.setattr(runner.subprocess, "Popen", lambda *args, **kwargs: process)
+
+    def reaped_elsewhere(*args):
+        raise ChildProcessError
+
+    monkeypatch.setattr(runner.os, "wait4", reaped_elsewhere)
+    child = runner.OwnedChild(["synthetic"])
+    with pytest.raises(runner.GuardError, match="owned_child_usage_unavailable"):
+        child.poll()
+    assert child.highwater_rss_bytes is None and child.returncode is None
+
+
+@pytest.mark.parametrize("allocation_owner", ["unrelated", "owned"])
+def test_highwater_is_bound_to_owned_child(tmp_path, allocation_owner):
+    # A fresh, light supervisor separates this attribution test from any
+    # scientific libraries already loaded by the surrounding pytest process.
+    # The unrelated case fails with process-wide RUSAGE_CHILDREN accounting.
+    code = r'''
+import importlib.util,json,os,resource,subprocess,sys
+from pathlib import Path
+source,output,owner,tiny=sys.argv[1:]
+spec=importlib.util.spec_from_file_location('launcher_memory_check',source)
+runner=importlib.util.module_from_spec(spec);sys.modules[spec.name]=runner;spec.loader.exec_module(runner)
+allocation="block=bytearray(128*1024*1024);block[::4096]=b'x'*(len(block)//4096)"
+if owner=='unrelated':
+ subprocess.run([sys.executable,'-I','-B','-c',allocation],check=True,timeout=5)
+# Intentionally suppress sampling only in the owned case to exercise the
+# terminal kernel high-water check for a peak between sampling intervals.
+if owner=='owned': runner.rss_bytes=lambda pgid: 0
+result=runner.supervise(Path(output),[sys.executable,'-I','-B','-c',tiny+(';' + allocation if owner=='owned' else '')],
+ environment={'PATH':os.environ.get('PATH','/usr/bin:/bin')},identity=lambda:{'acquisition_source_sha256':{}},
+ minimum_free=0,reserve_paths=[Path(output).parent],limits=runner.Limits(wall_seconds=5,rss_bytes=64*runner.MIB),
+ packet_check=lambda packet,source:{'synthetic_packet':True})
+assert result['group_absent'] and not runner.group_exists(result['owned_pgid']),result
+assert result==json.loads((Path(output)/'receipt.json').read_text()),result
+historical=resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss*(1 if sys.platform=='darwin' else 1024)
+print(json.dumps({'result':result,'all_children_highwater':historical}))
+'''
+    completed = subprocess.run(
+        [sys.executable, "-I", "-B", "-c", code, str(SOURCE), str(tmp_path / "attempt"), allocation_owner, TINY],
+        check=True, capture_output=True, text=True, timeout=15,
+        env={"PATH": os.environ.get("PATH", "/usr/bin:/bin")},
+    )
+    measured = json.loads(completed.stdout)
+    result = measured["result"]
+    assert measured["all_children_highwater"] > 64 * runner.MIB, measured
+    if allocation_owner == "unrelated":
+        assert result["status"] == "completed" and result["returncode"] == 0, measured
+        assert 0 < result["child_highwater_rss_bytes"] < 64 * runner.MIB, measured
+    else:
+        assert result["status"] == "stopped" and result["returncode"] == 0, measured
+        assert result["reason"] == "final;child_highwater_rss_limit", measured
+        assert result["child_highwater_rss_bytes"] > 64 * runner.MIB, measured
+        assert result["peak_group_rss_bytes"] == 0, measured
+
+
 def test_free_space_admission_failure_has_no_child(tmp_path, monkeypatch):
     monkeypatch.setattr(runner.os, "statvfs", lambda path: SimpleNamespace(f_bavail=0, f_frsize=4096))
     output = tmp_path / "attempt"
@@ -130,20 +212,21 @@ def test_free_space_admission_failure_has_no_child(tmp_path, monkeypatch):
                                environment={}, identity=lambda: {}, minimum_free=1, reserve_paths=[])
     assert result["status"] == "stopped" and result["reason"] == "free_space_reserve"
     assert result["owned_pgid"] is None and result["returncode"] is None
+    assert result["child_highwater_rss_bytes"] is None
     assert (output / "receipt.json").is_file()
 
 
 def test_changed_identity_stops_before_success(tmp_path):
     identities = iter([{"acquisition_source_sha256": {}}, {"acquisition_source_sha256": {}, "changed": True}])
     output, result = run_child(tmp_path, TINY, identity=lambda: next(identities))
-    assert result["status"] == "stopped" and result["reason"] == "source_or_runtime_identity_changed"
+    assert result["status"] == "stopped" and result["reason"] == "source_or_runtime_identity_changed", result
     assert (output / "packet/retained.txt").exists()
 
 
 def test_nonzero_exit_retains_log_and_returncode(tmp_path):
     output, result = run_child(tmp_path, "print('retained error',flush=True);raise SystemExit(7)")
     assert result["status"] == "stopped" and result["returncode"] == 7
-    assert result["reason"] == "child_nonzero_exit"
+    assert result["reason"] == "child_nonzero_exit", result
     assert "retained error" in (output / "runtime/run.log").read_text()
 
 
@@ -228,7 +311,7 @@ def test_packet_cannot_omit_artifact_even_with_consistent_manifest(tmp_path, mis
 
 def test_missing_manifest_stops_successful_child(tmp_path):
     output, result = run_child(tmp_path, TINY, packet_check=runner.verify_packet)
-    assert result["status"] == "stopped" and result["reason"] == "FileNotFoundError"
+    assert result["status"] == "stopped" and result["reason"] == "FileNotFoundError", result
     assert (output / "packet/retained.txt").exists()
 
 

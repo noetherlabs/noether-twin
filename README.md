@@ -28,7 +28,7 @@ JAX_PLATFORMS=cpu JAX_ENABLE_X64=true OMP_NUM_THREADS=1 \
 uv run --no-sync python scripts/plot_registration_development.py --output figures
 ```
 
-The [correctness workflow](.github/workflows/registration.yml) uses a pinned Python 3.11.15 environment and the committed dependency lock on relevant pushes and pull requests. No hosted result is claimed for this snapshot. The original implementation passed 128 local checks; the retained-data audit and figure review are separate evidence.
+The [correctness workflow](.github/workflows/registration.yml) uses a pinned Python 3.11.15 environment and the committed dependency lock on relevant pushes and pull requests. Scientific tests and launcher tests run in separate interpreters: Linux counts memory inherited before `exec` in a child's lifetime peak, so resource-limit fixtures must not inherit a populated optical-model process. Every test remains included, with separate JUnit reports. The original implementation passed 128 local checks; the retained-data audit and figure review are separate evidence.
 
 ## Reproduce the study
 
@@ -38,7 +38,7 @@ The protocol specifies the optical configuration, observation seeds, call budget
 uv run --no-sync python scripts/run_registration.py NEW_OUTPUT_ROOT --min-free-gib 4
 ```
 
-The output root must be fresh. Its `packet/` contains the study, `runtime/` retains logs and caches, and `receipt.json` records completion or the reason execution stopped. The launcher samples wall time (30 minutes), process-group memory (4 GiB), packet size (512 MiB logical / 1 GiB allocated), runtime output (256 MiB), and the requested free-space reserve. Add `--reserve-path PATH` for each additional backing filesystem, including a disk-image backing directory. Free space on a virtual volume alone need not measure its backing store.
+The output root must be fresh. Its `packet/` contains the study, `runtime/` retains logs and caches, and `receipt.json` records completion or the reason execution stopped. The launcher samples wall time (30 minutes), process-group memory (4 GiB), packet size (512 MiB logical / 1 GiB allocated), runtime output (256 MiB), and the requested free-space reserve. At exit it also checks the owned child's kernel-reported peak memory, including pre-`exec` memory, against the same 4 GiB limit; earlier unrelated children do not contribute. Add `--reserve-path PATH` for each additional backing filesystem, including a disk-image backing directory. Free space on a virtual volume alone need not measure its backing store.
 
 Failed runs retain their partial output and require a new root for retry. The checkout lock coordinates this launcher only. These sampled controls support reproduction of reviewed code; they are not a security sandbox, a real-time guarantee or scientific qualification. Source archives run without discovering a parent Git repository. A new execution receives its own timings and artifact identities.
 

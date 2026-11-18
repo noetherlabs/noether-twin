@@ -15,4 +15,5 @@ build/
 *.parquet
 *.h5
 registration-junit.xml
+launcher-junit.xml
 .noether-twin.lock

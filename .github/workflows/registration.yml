@@ -65,7 +65,12 @@ jobs:
           sha256sum uv.lock pyproject.toml
           uv run --no-sync python -c 'import sys, importlib.metadata as m; assert sys.version_info[:3] == (3, 11, 15); print(sys.version); print({n:m.version(n) for n in ("numpy", "scipy", "hcipy", "dLux", "jax", "jaxlib", "pytest")})'
       - name: Check the complete scientific test suite
-        run: uv run --no-sync pytest tests -q -ra --junitxml=registration-junit.xml
+        run: uv run --no-sync pytest tests --ignore=tests/test_registration_launcher.py -q -ra --junitxml=registration-junit.xml
+      # Linux child high-water RSS includes memory inherited before exec.
+      # Guard fixtures use a fresh, light interpreter, as the launcher CLI does.
+      - name: Check every launcher resource and integrity guard
+        if: success() || failure()
+        run: uv run --no-sync pytest tests/test_registration_launcher.py -q -ra --junitxml=launcher-junit.xml
       - name: Verify the locked source remains unchanged
         if: always()
         run: git diff --exit-code

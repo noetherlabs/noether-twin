@@ -7,16 +7,16 @@
       "origin_bytes": null,
       "origin_commit": null,
       "origin_sha256": null,
-      "snapshot_bytes": 2385,
-      "snapshot_sha256": "787c6977cc2f08587d66df603a2db5da89edfbe32652a9ab1e7c6e89a9799875"
+      "snapshot_bytes": 2794,
+      "snapshot_sha256": "0f2a9caa807355e08aa8e9fc55cecb78dc5f6746f79ed10fc579435e80dd2e61"
     },
     ".gitignore": {
       "change": "new release infrastructure; not part of historical acquisition",
       "origin_bytes": null,
       "origin_commit": null,
       "origin_sha256": null,
-      "snapshot_bytes": 194,
-      "snapshot_sha256": "94d12d503ce4eff0c717b2d6144d764faa6584452f7435740d1d482775f412dd"
+      "snapshot_bytes": 213,
+      "snapshot_sha256": "e68f1ede61dfa191d801523ef332767ceafeea25ce0122d156b7f5d5d230cbf6"
     },
     ".pre-commit-config.yaml": {
       "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
@@ -59,8 +59,8 @@
       "origin_bytes": null,
       "origin_commit": null,
       "origin_sha256": null,
-      "snapshot_bytes": 4541,
-      "snapshot_sha256": "380ef760309ce84b0ad7d675227c525b25d3645a42802329ba13b6494bd6999f"
+      "snapshot_bytes": 4944,
+      "snapshot_sha256": "e7f90f0029ed0f2b0147e5b7a6420184e7cb27ac0d4fc4b30a71d8e4378d11db"
     },
     "docs/source-provenance.md": {
       "change": "new release infrastructure; not part of historical acquisition",
@@ -173,8 +173,8 @@
       "origin_bytes": null,
       "origin_commit": null,
       "origin_sha256": null,
-      "snapshot_bytes": 26865,
-      "snapshot_sha256": "5fb9dc54679140b6bf0d1f03d481f1cab27a12a65f4d3d739d55f555786f0804"
+      "snapshot_bytes": 28821,
+      "snapshot_sha256": "0879ce866cd6f736192b26714cd14c0db55977e125144ebe8e7ff391b7f66c19"
     },
     "src/noether_optics/__init__.py": {
       "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
@@ -581,8 +581,8 @@
       "origin_bytes": null,
       "origin_commit": null,
       "origin_sha256": null,
-      "snapshot_bytes": 17138,
-      "snapshot_sha256": "31ab91e7482d8dd6d0639854f0e6829f0e7970d670d1367e6726b7af428eb5b4"
+      "snapshot_bytes": 21744,
+      "snapshot_sha256": "1ea7befc58d4a4bd0308a0d6c5350a1e30c4ba08148050e8a5e4797df8eb1391"
     },
     "tests/twin/__init__.py": {
       "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
