@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
     paths:
+      - 'source-map.json'
+      - 'README.md'
+      - 'docs/**'
+      - 'results/**'
       - 'src/**'
       - 'tests/**'
       - 'scripts/**'
@@ -12,6 +16,10 @@ on:
       - '.github/workflows/registration.yml'
   pull_request:
     paths:
+      - 'source-map.json'
+      - 'README.md'
+      - 'docs/**'
+      - 'results/**'
       - 'src/**'
       - 'tests/**'
       - 'scripts/**'

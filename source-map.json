@@ -7,8 +7,8 @@
       "origin_bytes": null,
       "origin_commit": null,
       "origin_sha256": null,
-      "snapshot_bytes": 2794,
-      "snapshot_sha256": "0f2a9caa807355e08aa8e9fc55cecb78dc5f6746f79ed10fc579435e80dd2e61"
+      "snapshot_bytes": 2964,
+      "snapshot_sha256": "9ab58e1539f631120d4d3446c44324e3c7efbc1bbb20f4f6c6a8260ae54979f2"
     },
     ".gitignore": {
       "change": "new release infrastructure; not part of historical acquisition",
