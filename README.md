@@ -6,7 +6,7 @@ The current study asks whether eight focal-plane calibration images can improve 
 
 **Result:** calibration reduced same-grid mean predictive loss in two shifted states, but calibrated 128-sample predictions had higher mean loss than nominal 256-sample predictions in every state. At 128 samples, 18 of 32 shifted noisy fits used nominal fallback. This known-flat simulation establishes neither hardware performance nor a closed-loop control benefit.
 
-[Read the study](results/registration_development_v1/README.md) · [Protocol](docs/twin-registration.md) · [Complete derived evidence](results/registration_development_v1/summary.json)
+[Read the study](results/registration_development_v1/README.md) · [Protocol](docs/twin-registration.md) · [Dataset](https://huggingface.co/datasets/noetherlabs/twin-registration-development-v1) · [Complete derived evidence](results/registration_development_v1/summary.json)
 
 ## Included
 
@@ -42,7 +42,7 @@ The output root must be fresh. Its `packet/` contains the study, `runtime/` reta
 
 Failed runs retain their partial output and require a new root for retry. The checkout lock coordinates this launcher only. These sampled controls support reproduction of reviewed code; they are not a security sandbox, a real-time guarantee or scientific qualification. Source archives run without discovering a parent Git repository. A new execution receives its own timings and artifact identities.
 
-The original 131 MB raw acquisition is retained separately; this repository includes complete per-unit derived evidence and its source/audit hashes, with no raw download.
+The [raw dataset](https://huggingface.co/datasets/noetherlabs/twin-registration-development-v1) provides the unchanged 790-file acquisition, a 51-row navigation index and scientific provenance under CC BY 4.0. See the [pinned loading example](docs/twin-registration.md#load-the-retained-data). This remains known-flat development evidence, not a held-out benchmark or a closed-loop result.
 
 ## Scope
 

@@ -57,7 +57,8 @@ Acquisition source identifier: `809196f645cb606524648c926947424d53b04edc`. Its e
 A separate retained-data audit verified the complete 790-file inventory, solver traces, nominal fallbacks, observation seeds, global prediction barrier, 1,377 losses and 408 paired contrasts. Reported reductions reproduced exactly. An independent compensated sum of the same rounded terms stayed within its prospectively fixed arithmetic bound. This audit does not independently recompute optical propagation, gradients or logarithms.
 
 - [Complete per-unit derived evidence](summary.json): all 51 units, eight contrasts, fit endpoints, costs and stratified summaries.
-- [Source and audit provenance](provenance.json), including the raw-manifest digest. The 131 MB raw NPZ/JSON acquisition and its full manifest are retained separately; this compact report does not provide a raw download.
+- [Raw dataset](https://huggingface.co/datasets/noetherlabs/twin-registration-development-v1): the unchanged 790-file acquisition, full manifest and 51-row development index, licensed CC BY 4.0. The [loading example](../../docs/twin-registration.md#load-the-retained-data) pins the dataset revision.
+- [Source and audit provenance](provenance.json), including the raw-manifest digest.
 - [Figure source](../../scripts/plot_registration_development.py): regenerates all figures from the included summary.
 
 Use a fresh isolated environment for this repository. The separate `noether-ao` repository currently uses the same Python distribution and import names, so keep the two environments separate. Generate a fresh study packet with the frozen source and compatible pinned environment:

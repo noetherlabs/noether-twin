@@ -59,24 +59,24 @@
       "origin_bytes": null,
       "origin_commit": null,
       "origin_sha256": null,
-      "snapshot_bytes": 4944,
-      "snapshot_sha256": "e7f90f0029ed0f2b0147e5b7a6420184e7cb27ac0d4fc4b30a71d8e4378d11db"
+      "snapshot_bytes": 5254,
+      "snapshot_sha256": "4e4bf427b07dfa02745914192f82dc53d2520c7952ddbc791deae7adbea874bf"
     },
     "docs/source-provenance.md": {
       "change": "new release infrastructure; not part of historical acquisition",
       "origin_bytes": null,
       "origin_commit": null,
       "origin_sha256": null,
-      "snapshot_bytes": 1744,
-      "snapshot_sha256": "20aca77327933c03dfa81a3ae029b8d0dd39f985b5e46e9803f19e1047a6d076"
+      "snapshot_bytes": 1993,
+      "snapshot_sha256": "93720eeb889fb563713eca9e0d61d37b7598b53d3cb2b6c0eac18e0a5f748e46"
     },
     "docs/twin-registration.md": {
-      "change": "unchanged",
+      "change": "release documentation updated with dataset access; frozen acquisition protocol unchanged",
       "origin_bytes": 8483,
       "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
       "origin_sha256": "31ea7ec2c9e9d66e562ea29a0fc9cf54ee1439a90370b97882f2ffe5c2c57666",
-      "snapshot_bytes": 8483,
-      "snapshot_sha256": "31ea7ec2c9e9d66e562ea29a0fc9cf54ee1439a90370b97882f2ffe5c2c57666"
+      "snapshot_bytes": 9577,
+      "snapshot_sha256": "9bf6bde415cc474f594a02b2b4a2649afe8f7039d9ab8135d78a9679b8fdd599"
     },
     "pyproject.toml": {
       "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
@@ -93,8 +93,8 @@
       "origin_bytes": 7034,
       "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
       "origin_sha256": "bebe263c1983754013762c7111bc0dd667631b6449393e85e5aa2b29db8b15c9",
-      "snapshot_bytes": 7309,
-      "snapshot_sha256": "d7aa10b1be955af046ee3d4b2c29be35be628f0251fb5fba2a682a121c09b97c"
+      "snapshot_bytes": 7473,
+      "snapshot_sha256": "66bbc7815dd9f0fe2d67ca40b56324fd8e5d354c6149cc841e9d1664d362f132"
     },
     "results/registration_development_v1/fit-cost.pdf": {
       "change": "unchanged",

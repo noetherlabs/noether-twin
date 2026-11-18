@@ -110,6 +110,25 @@ gate or decision margin is established here. Agreement between grids supports a
 calibration-limited interpretation only if calibration improves prediction beyond
 the observed sensitivity; agreement alone establishes no limiting mechanism.
 
+## Load the retained data
+
+The [Hugging Face dataset](https://huggingface.co/datasets/noetherlabs/twin-registration-development-v1) contains the original 790-file scientific packet under CC BY 4.0. In a separate analysis environment with `datasets` installed, load the navigation index at this fixed dataset revision:
+
+```python
+from datasets import load_dataset
+
+units = load_dataset(
+    "noetherlabs/twin-registration-development-v1",
+    "units",
+    split="development",
+    revision="57f9c9e6bdbe794d199de4de21692c10d27fcfe3",
+)
+```
+
+The 51 rows cover 48 Poisson realizations in three fixed optical states and three separate mean-image diagnostics. They link to unchanged fit/outcome records; optical arrays remain NPZ files under `packet/`. Use the same dataset revision for raw downloads, verify files against `packet/manifest.json`, and load numeric archives with `allow_pickle=False`.
+
+These known-flat observations have already informed development. The index creates no new training/evaluation split, and publication does not establish hardware performance or closed-loop benefit.
+
 ## Reproducibility and cost
 
 `noether_optics.bench.twin_registration.protocol()` declares the complete
