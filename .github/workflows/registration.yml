@@ -1,0 +1,71 @@
+name: Optical model correctness
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/registration.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'scripts/**'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - '.github/workflows/registration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: optical-model-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  registration:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      JAX_PLATFORMS: cpu
+      JAX_ENABLE_X64: 'true'
+      XLA_FLAGS: --xla_cpu_multi_thread_eigen=false
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      UV_PYTHON: '3.11.15'
+    steps:
+      - name: Check out the exact workflow revision
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Install the pinned environment manager
+        uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
+        with:
+          version: '0.13.7'
+          python-version: '3.11.15'
+          enable-cache: 'false'
+      - name: Install the committed CPU test environment
+        run: uv sync --locked --extra jax --extra dev
+      - name: Record source and environment identities
+        env:
+          EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+          git diff --exit-code -- uv.lock pyproject.toml
+          sha256sum uv.lock pyproject.toml
+          uv run --no-sync python -c 'import sys, importlib.metadata as m; assert sys.version_info[:3] == (3, 11, 15); print(sys.version); print({n:m.version(n) for n in ("numpy", "scipy", "hcipy", "dLux", "jax", "jaxlib", "pytest")})'
+      - name: Check the complete scientific test suite
+        run: uv run --no-sync pytest tests -q -ra --junitxml=registration-junit.xml
+      - name: Verify the locked source remains unchanged
+        if: always()
+        run: git diff --exit-code

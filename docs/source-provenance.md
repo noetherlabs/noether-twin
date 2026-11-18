@@ -1,0 +1,9 @@
+# Source provenance
+
+The registration acquisition used source identifier `809196f645cb606524648c926947424d53b04edc`. The completed report used `420f51c65730bc055de902e019ab493d2cd2dd12`. These identifiers refer to the original research history; this repository is a curated source snapshot and does not contain those historical Git objects.
+
+[source-map.json](../source-map.json) records SHA-256 for every copied source, test, environment and report file, plus the release's launcher and its tests. All eight acquisition-bound files, original tests and environment definitions are byte-identical. Six auxiliary-module docstrings now state their approximations without obsolete development references; their numerical statements are unchanged. The registration report changes its citation URL, source-availability explanation and reproduction command. Its complete numerical summary and original audit provenance are unchanged. New release files have no historical acquisition identity and are explicitly labelled in the mapping.
+
+[provenance.json](../results/registration_development_v1/provenance.json) separately records the eight source-file hashes used by the acquisition and the raw-manifest/audit digests. This permits source-byte comparisons without treating a new snapshot commit as the original acquisition commit. New executions retain their own source/runtime records and results.
+
+The original acquisition comprises 790 files and 131,076,499 logical bytes. Its raw images, traces and operational receipts are not part of this snapshot. The included summary retains all 51 units, 153 fits, 1,377 losses and 408 paired contrasts; the report explains the independent audit's scope and limitations. No external raw download is claimed.

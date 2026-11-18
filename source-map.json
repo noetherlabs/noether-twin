@@ -1,0 +1,630 @@
+{
+  "acquisition_source_identifier": "809196f645cb606524648c926947424d53b04edc",
+  "derived_report_source_identifier": "420f51c65730bc055de902e019ab493d2cd2dd12",
+  "files": {
+    ".github/workflows/registration.yml": {
+      "change": "new release infrastructure; not part of historical acquisition",
+      "origin_bytes": null,
+      "origin_commit": null,
+      "origin_sha256": null,
+      "snapshot_bytes": 2385,
+      "snapshot_sha256": "787c6977cc2f08587d66df603a2db5da89edfbe32652a9ab1e7c6e89a9799875"
+    },
+    ".gitignore": {
+      "change": "new release infrastructure; not part of historical acquisition",
+      "origin_bytes": null,
+      "origin_commit": null,
+      "origin_sha256": null,
+      "snapshot_bytes": 194,
+      "snapshot_sha256": "94d12d503ce4eff0c717b2d6144d764faa6584452f7435740d1d482775f412dd"
+    },
+    ".pre-commit-config.yaml": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "b2f9307893f36688dfde69811f938160760ebe4082d443ecf95c37be563a16be",
+      "change": "unchanged",
+      "origin_bytes": 386,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "b2f9307893f36688dfde69811f938160760ebe4082d443ecf95c37be563a16be",
+      "snapshot_bytes": 386,
+      "snapshot_sha256": "b2f9307893f36688dfde69811f938160760ebe4082d443ecf95c37be563a16be"
+    },
+    ".python-version": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "49a506dd32096b010d75205acf3430c9ae6c40351888129499e5a5e487126c93",
+      "change": "unchanged",
+      "origin_bytes": 5,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "49a506dd32096b010d75205acf3430c9ae6c40351888129499e5a5e487126c93",
+      "snapshot_bytes": 5,
+      "snapshot_sha256": "49a506dd32096b010d75205acf3430c9ae6c40351888129499e5a5e487126c93"
+    },
+    "LICENSE": {
+      "change": "unchanged",
+      "origin_bytes": 11358,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "snapshot_bytes": 11358,
+      "snapshot_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "NOTICE": {
+      "change": "new release infrastructure; not part of historical acquisition",
+      "origin_bytes": null,
+      "origin_commit": null,
+      "origin_sha256": null,
+      "snapshot_bytes": 321,
+      "snapshot_sha256": "ca9e522724b3324533d87febc47eb30667e6b9b13ee00c56f2fda1440efb33be"
+    },
+    "README.md": {
+      "change": "new release infrastructure; not part of historical acquisition",
+      "origin_bytes": null,
+      "origin_commit": null,
+      "origin_sha256": null,
+      "snapshot_bytes": 4541,
+      "snapshot_sha256": "380ef760309ce84b0ad7d675227c525b25d3645a42802329ba13b6494bd6999f"
+    },
+    "docs/source-provenance.md": {
+      "change": "new release infrastructure; not part of historical acquisition",
+      "origin_bytes": null,
+      "origin_commit": null,
+      "origin_sha256": null,
+      "snapshot_bytes": 1744,
+      "snapshot_sha256": "20aca77327933c03dfa81a3ae029b8d0dd39f985b5e46e9803f19e1047a6d076"
+    },
+    "docs/twin-registration.md": {
+      "change": "unchanged",
+      "origin_bytes": 8483,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "31ea7ec2c9e9d66e562ea29a0fc9cf54ee1439a90370b97882f2ffe5c2c57666",
+      "snapshot_bytes": 8483,
+      "snapshot_sha256": "31ea7ec2c9e9d66e562ea29a0fc9cf54ee1439a90370b97882f2ffe5c2c57666"
+    },
+    "pyproject.toml": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "a27d433d2a5c381eb840bf8aef7e58c6fbda6e5addc31a8c26c1065583b6efa4",
+      "change": "unchanged",
+      "origin_bytes": 1127,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "a27d433d2a5c381eb840bf8aef7e58c6fbda6e5addc31a8c26c1065583b6efa4",
+      "snapshot_bytes": 1127,
+      "snapshot_sha256": "a27d433d2a5c381eb840bf8aef7e58c6fbda6e5addc31a8c26c1065583b6efa4"
+    },
+    "results/registration_development_v1/README.md": {
+      "change": "release documentation updated; numerical evidence unchanged",
+      "origin_bytes": 7034,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "bebe263c1983754013762c7111bc0dd667631b6449393e85e5aa2b29db8b15c9",
+      "snapshot_bytes": 7309,
+      "snapshot_sha256": "d7aa10b1be955af046ee3d4b2c29be35be628f0251fb5fba2a682a121c09b97c"
+    },
+    "results/registration_development_v1/fit-cost.pdf": {
+      "change": "unchanged",
+      "origin_bytes": 51591,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "4057b853a08c7248d26944460b4f07db894b71b6de4c96b3c276c25598e20530",
+      "snapshot_bytes": 51591,
+      "snapshot_sha256": "4057b853a08c7248d26944460b4f07db894b71b6de4c96b3c276c25598e20530"
+    },
+    "results/registration_development_v1/fit-cost.png": {
+      "change": "unchanged",
+      "origin_bytes": 129653,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "04815bd15b8359edcff39d3f393755636f32688eb15b691f9f5aff3360ed5567",
+      "snapshot_bytes": 129653,
+      "snapshot_sha256": "04815bd15b8359edcff39d3f393755636f32688eb15b691f9f5aff3360ed5567"
+    },
+    "results/registration_development_v1/predictive-loss.pdf": {
+      "change": "unchanged",
+      "origin_bytes": 33452,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "79749795f37d9a42ed74ff6d34298366e95b058c22047924da5f8d2113d8237b",
+      "snapshot_bytes": 33452,
+      "snapshot_sha256": "79749795f37d9a42ed74ff6d34298366e95b058c22047924da5f8d2113d8237b"
+    },
+    "results/registration_development_v1/predictive-loss.png": {
+      "change": "unchanged",
+      "origin_bytes": 160626,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "abba1b608a6c0e875ffc3bd7fd89f72e304825ec596463751d7facc776801286",
+      "snapshot_bytes": 160626,
+      "snapshot_sha256": "abba1b608a6c0e875ffc3bd7fd89f72e304825ec596463751d7facc776801286"
+    },
+    "results/registration_development_v1/provenance.json": {
+      "change": "unchanged",
+      "origin_bytes": 2865,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "0ea892f24da67d71bf62a717718b2960730d921976b13dbf692f26bbbfbcd966",
+      "snapshot_bytes": 2865,
+      "snapshot_sha256": "0ea892f24da67d71bf62a717718b2960730d921976b13dbf692f26bbbfbcd966"
+    },
+    "results/registration_development_v1/registration-reference.pdf": {
+      "change": "unchanged",
+      "origin_bytes": 52645,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "0ca1ed33cdecf51cdf348a94c841f55f26ae73c863c1fd39867cb2ae5046f95d",
+      "snapshot_bytes": 52645,
+      "snapshot_sha256": "0ca1ed33cdecf51cdf348a94c841f55f26ae73c863c1fd39867cb2ae5046f95d"
+    },
+    "results/registration_development_v1/registration-reference.png": {
+      "change": "unchanged",
+      "origin_bytes": 178214,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "9d4aa3c71e24366cfd7da11dcf355f570d594775bdb58518dae1b08592104045",
+      "snapshot_bytes": 178214,
+      "snapshot_sha256": "9d4aa3c71e24366cfd7da11dcf355f570d594775bdb58518dae1b08592104045"
+    },
+    "results/registration_development_v1/summary.json": {
+      "change": "unchanged",
+      "origin_bytes": 664572,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "97ff424898280f6c6965b54e52d834a7dc17d7fcb07b3cb925beaabca59afa93",
+      "snapshot_bytes": 664572,
+      "snapshot_sha256": "97ff424898280f6c6965b54e52d834a7dc17d7fcb07b3cb925beaabca59afa93"
+    },
+    "scripts/plot_registration_development.py": {
+      "change": "unchanged",
+      "origin_bytes": 9756,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "10ab519d6a5315bafc7b90bb12890469e7920c343d3b19e46f843bdf2ba0a09d",
+      "snapshot_bytes": 9756,
+      "snapshot_sha256": "10ab519d6a5315bafc7b90bb12890469e7920c343d3b19e46f843bdf2ba0a09d"
+    },
+    "scripts/run_registration.py": {
+      "change": "new release infrastructure; not part of historical acquisition",
+      "origin_bytes": null,
+      "origin_commit": null,
+      "origin_sha256": null,
+      "snapshot_bytes": 26865,
+      "snapshot_sha256": "5fb9dc54679140b6bf0d1f03d481f1cab27a12a65f4d3d739d55f555786f0804"
+    },
+    "src/noether_optics/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/bench/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/bench/harness/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/bench/metrics.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "bb9ebd86c1a280afb40655d5b9dff63fdd5124309328a701a5dd68bb291d3a9d",
+      "change": "Module docstring only: standalone approximation/limitations; numerical statements unchanged.",
+      "origin_bytes": 4809,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "bb9ebd86c1a280afb40655d5b9dff63fdd5124309328a701a5dd68bb291d3a9d",
+      "snapshot_bytes": 4638,
+      "snapshot_sha256": "7c9530ec2dafb64a9ba529d996949d1127d86f8ac52932cfcbc887af52014ef3"
+    },
+    "src/noether_optics/bench/refsim/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/bench/refsim/calibration.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "4fb8998bb8c20c69ed7fe9091d8954018a0691d1af8b0d1dd3c536e106826704",
+      "change": "Module docstring only: standalone approximation/limitations; numerical statements unchanged.",
+      "origin_bytes": 3812,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "4fb8998bb8c20c69ed7fe9091d8954018a0691d1af8b0d1dd3c536e106826704",
+      "snapshot_bytes": 3531,
+      "snapshot_sha256": "ecba5e9260c712ed8f7b12371512181f7325e19cf9a6e25a51388f77a4382949"
+    },
+    "src/noether_optics/bench/refsim/config.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "58c8d09038c0d8e23d5522e24c34e13a6a0ab5dcfe370250d0b8ec3718f67477",
+      "change": "Module docstring only: standalone approximation/limitations; numerical statements unchanged.",
+      "origin_bytes": 8787,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "58c8d09038c0d8e23d5522e24c34e13a6a0ab5dcfe370250d0b8ec3718f67477",
+      "snapshot_bytes": 8716,
+      "snapshot_sha256": "c5e11d4ef109e36f3314f25bf2c356bc2aa5e11ad32646c4583486a4ff5759c5"
+    },
+    "src/noether_optics/bench/refsim/photometry.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "0733fdd6f12e55b9f0844c745fc17d8fd67d4d9d9c3e243807d36c71ac04e490",
+      "change": "Module docstring only: standalone approximation/limitations; numerical statements unchanged.",
+      "origin_bytes": 2084,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "0733fdd6f12e55b9f0844c745fc17d8fd67d4d9d9c3e243807d36c71ac04e490",
+      "snapshot_bytes": 1911,
+      "snapshot_sha256": "738721a20a0dccbaad74dd98e3239a69e2d5924d37b5ead0df3c726ddd9b9e92"
+    },
+    "src/noether_optics/bench/refsim/run_loop.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "d5ebefb302ed02aa3e5914edf36bc8f100ce63486df2ef8a40014974435f3cc7",
+      "change": "unchanged",
+      "origin_bytes": 3812,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "d5ebefb302ed02aa3e5914edf36bc8f100ce63486df2ef8a40014974435f3cc7",
+      "snapshot_bytes": 3812,
+      "snapshot_sha256": "d5ebefb302ed02aa3e5914edf36bc8f100ce63486df2ef8a40014974435f3cc7"
+    },
+    "src/noether_optics/bench/refsim/system.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "5488403f6919753ef05d966304d26bd8d0b14ba790e8e2d65ae2cba4fe7631c9",
+      "change": "Module docstring only: standalone approximation/limitations; numerical statements unchanged.",
+      "origin_bytes": 17444,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "5488403f6919753ef05d966304d26bd8d0b14ba790e8e2d65ae2cba4fe7631c9",
+      "snapshot_bytes": 16487,
+      "snapshot_sha256": "561f8aed2b1b659c3868377a1a0aed3046bd131110c6a14175d9dcf8259d67aa"
+    },
+    "src/noether_optics/bench/twin_development.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "5db68fb6bd9441da6b313170f2bfab0d08f2fbbdf0cc5038ea2e155a88ea4049",
+      "change": "unchanged",
+      "origin_bytes": 28016,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "5db68fb6bd9441da6b313170f2bfab0d08f2fbbdf0cc5038ea2e155a88ea4049",
+      "snapshot_bytes": 28016,
+      "snapshot_sha256": "5db68fb6bd9441da6b313170f2bfab0d08f2fbbdf0cc5038ea2e155a88ea4049"
+    },
+    "src/noether_optics/bench/twin_intervention.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "141124e2c743f98c29bc459ee5a8263ab598b667b31bb0213bdb03784f75e0b9",
+      "change": "unchanged",
+      "origin_bytes": 86076,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "141124e2c743f98c29bc459ee5a8263ab598b667b31bb0213bdb03784f75e0b9",
+      "snapshot_bytes": 86076,
+      "snapshot_sha256": "141124e2c743f98c29bc459ee5a8263ab598b667b31bb0213bdb03784f75e0b9"
+    },
+    "src/noether_optics/bench/twin_registration.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "6e6eef808ed7aa0a3bd717f43d7deacc910277387ba041daf9d12a0704b85605",
+      "change": "unchanged",
+      "origin_bytes": 16704,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "6e6eef808ed7aa0a3bd717f43d7deacc910277387ba041daf9d12a0704b85605",
+      "snapshot_bytes": 16704,
+      "snapshot_sha256": "6e6eef808ed7aa0a3bd717f43d7deacc910277387ba041daf9d12a0704b85605"
+    },
+    "src/noether_optics/control/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/control/classical/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/control/classical/eof.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "c98c8f9d1b8e117a1c6659de0a067a643031cc51a9d70f773d3490fcafc828d0",
+      "change": "Module docstring only: standalone approximation/limitations; numerical statements unchanged.",
+      "origin_bytes": 6052,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "c98c8f9d1b8e117a1c6659de0a067a643031cc51a9d70f773d3490fcafc828d0",
+      "snapshot_bytes": 5658,
+      "snapshot_sha256": "e5297a258b2f568d0fcfed17472902eedc77b16b5a941b778b6bb522a6fd3614"
+    },
+    "src/noether_optics/control/classical/gain_tuning.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "62a274b7e88de8184c9c35f41bf791deb1d24a7a64cfa9005f44ecbdf63b6950",
+      "change": "unchanged",
+      "origin_bytes": 1190,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "62a274b7e88de8184c9c35f41bf791deb1d24a7a64cfa9005f44ecbdf63b6950",
+      "snapshot_bytes": 1190,
+      "snapshot_sha256": "62a274b7e88de8184c9c35f41bf791deb1d24a7a64cfa9005f44ecbdf63b6950"
+    },
+    "src/noether_optics/control/classical/idealized.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e12c1d312c58535bfdcfbcd7f984a9c0d59890189622832e124be5b29aa8d4e0",
+      "change": "unchanged",
+      "origin_bytes": 2291,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e12c1d312c58535bfdcfbcd7f984a9c0d59890189622832e124be5b29aa8d4e0",
+      "snapshot_bytes": 2291,
+      "snapshot_sha256": "e12c1d312c58535bfdcfbcd7f984a9c0d59890189622832e124be5b29aa8d4e0"
+    },
+    "src/noether_optics/control/classical/integrator.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "44ad5fd5c53efdd68c8efebf324814253e8e9657e1ee35c90de2ffedc17008c7",
+      "change": "unchanged",
+      "origin_bytes": 1117,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "44ad5fd5c53efdd68c8efebf324814253e8e9657e1ee35c90de2ffedc17008c7",
+      "snapshot_bytes": 1117,
+      "snapshot_sha256": "44ad5fd5c53efdd68c8efebf324814253e8e9657e1ee35c90de2ffedc17008c7"
+    },
+    "src/noether_optics/control/hybrid/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/control/po4ao_repro/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/guard/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/guard/trace/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/twin/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "src/noether_optics/twin/phase_diversity.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "5e4cc909cc1f7b4248a54423d89e83c97626c1f7a686839aa27fda13ce6f9099",
+      "change": "unchanged",
+      "origin_bytes": 13691,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "5e4cc909cc1f7b4248a54423d89e83c97626c1f7a686839aa27fda13ce6f9099",
+      "snapshot_bytes": 13691,
+      "snapshot_sha256": "5e4cc909cc1f7b4248a54423d89e83c97626c1f7a686839aa27fda13ce6f9099"
+    },
+    "src/noether_optics/twin/registration.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "973bcaa2738139ca43d086cfb40203a799254fcf5d11dc33c28e3951c4c77fed",
+      "change": "unchanged",
+      "origin_bytes": 11301,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "973bcaa2738139ca43d086cfb40203a799254fcf5d11dc33c28e3951c4c77fed",
+      "snapshot_bytes": 11301,
+      "snapshot_sha256": "973bcaa2738139ca43d086cfb40203a799254fcf5d11dc33c28e3951c4c77fed"
+    },
+    "src/noether_optics/twin/static_mirror.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "44fb56d412a4da4ec37c6e7174f08ae0e7a6e793a4f5612c4ed3bc00ceebd9fc",
+      "change": "unchanged",
+      "origin_bytes": 10343,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "44fb56d412a4da4ec37c6e7174f08ae0e7a6e793a4f5612c4ed3bc00ceebd9fc",
+      "snapshot_bytes": 10343,
+      "snapshot_sha256": "44fb56d412a4da4ec37c6e7174f08ae0e7a6e793a4f5612c4ed3bc00ceebd9fc"
+    },
+    "tests/bench/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/bench/test_calibration.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "72d6403dc0e447280ca3683601dd8c542b6276ab2fa875ce5468f69af0f46729",
+      "change": "unchanged",
+      "origin_bytes": 2848,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "72d6403dc0e447280ca3683601dd8c542b6276ab2fa875ce5468f69af0f46729",
+      "snapshot_bytes": 2848,
+      "snapshot_sha256": "72d6403dc0e447280ca3683601dd8c542b6276ab2fa875ce5468f69af0f46729"
+    },
+    "tests/bench/test_metrics.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "56e212103104529764c7e9fbc78055bd8209ef1a7def9b89c03e7f215cec387c",
+      "change": "unchanged",
+      "origin_bytes": 2245,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "56e212103104529764c7e9fbc78055bd8209ef1a7def9b89c03e7f215cec387c",
+      "snapshot_bytes": 2245,
+      "snapshot_sha256": "56e212103104529764c7e9fbc78055bd8209ef1a7def9b89c03e7f215cec387c"
+    },
+    "tests/bench/test_sampling_contract.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "4d48cc13861b046c0593b81852ca3c0af2c212b2b147879b364877a4811912f3",
+      "change": "unchanged",
+      "origin_bytes": 9027,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "4d48cc13861b046c0593b81852ca3c0af2c212b2b147879b364877a4811912f3",
+      "snapshot_bytes": 9027,
+      "snapshot_sha256": "4d48cc13861b046c0593b81852ca3c0af2c212b2b147879b364877a4811912f3"
+    },
+    "tests/bench/test_science_alignment.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "92d351ca85169e2fe613cf871ce50f386778b4b018fc59f631e6de69ff3377f8",
+      "change": "unchanged",
+      "origin_bytes": 4378,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "92d351ca85169e2fe613cf871ce50f386778b4b018fc59f631e6de69ff3377f8",
+      "snapshot_bytes": 4378,
+      "snapshot_sha256": "92d351ca85169e2fe613cf871ce50f386778b4b018fc59f631e6de69ff3377f8"
+    },
+    "tests/bench/test_system.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "07c9a1fa60fca6035f1732cf07774ab0aa59f3906d803ff331bfdcf3fcf6aef7",
+      "change": "unchanged",
+      "origin_bytes": 2063,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "07c9a1fa60fca6035f1732cf07774ab0aa59f3906d803ff331bfdcf3fcf6aef7",
+      "snapshot_bytes": 2063,
+      "snapshot_sha256": "07c9a1fa60fca6035f1732cf07774ab0aa59f3906d803ff331bfdcf3fcf6aef7"
+    },
+    "tests/bench/test_twin_development.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "3fa1938a12e6e24274a25e2ac05e98d12bbc9ee5aef85a08195ff2875335dd1e",
+      "change": "unchanged",
+      "origin_bytes": 13829,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "3fa1938a12e6e24274a25e2ac05e98d12bbc9ee5aef85a08195ff2875335dd1e",
+      "snapshot_bytes": 13829,
+      "snapshot_sha256": "3fa1938a12e6e24274a25e2ac05e98d12bbc9ee5aef85a08195ff2875335dd1e"
+    },
+    "tests/bench/test_twin_registration.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "3a540001e71a7ab2f62071b7272de614b9a4724d6d829a76e4085dc73d9e6a66",
+      "change": "unchanged",
+      "origin_bytes": 12820,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "3a540001e71a7ab2f62071b7272de614b9a4724d6d829a76e4085dc73d9e6a66",
+      "snapshot_bytes": 12820,
+      "snapshot_sha256": "3a540001e71a7ab2f62071b7272de614b9a4724d6d829a76e4085dc73d9e6a66"
+    },
+    "tests/conftest.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "676bb4198493c80b4fc782f8c58fc5c20ba91100bdfe07d6a8779ae16f46d63e",
+      "change": "unchanged",
+      "origin_bytes": 179,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "676bb4198493c80b4fc782f8c58fc5c20ba91100bdfe07d6a8779ae16f46d63e",
+      "snapshot_bytes": 179,
+      "snapshot_sha256": "676bb4198493c80b4fc782f8c58fc5c20ba91100bdfe07d6a8779ae16f46d63e"
+    },
+    "tests/control/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/control/test_classical.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "2d97106a3d518c72065f80895631780fb5c4a4593a85725ff42b6bcb130e8615",
+      "change": "unchanged",
+      "origin_bytes": 2287,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "2d97106a3d518c72065f80895631780fb5c4a4593a85725ff42b6bcb130e8615",
+      "snapshot_bytes": 2287,
+      "snapshot_sha256": "2d97106a3d518c72065f80895631780fb5c4a4593a85725ff42b6bcb130e8615"
+    },
+    "tests/control/test_feedback_conventions.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "2d15e6cb94d92f769d44bcb899008f4c4aec1185c16b8470e73f7a7ac1265cdf",
+      "change": "unchanged",
+      "origin_bytes": 11693,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "2d15e6cb94d92f769d44bcb899008f4c4aec1185c16b8470e73f7a7ac1265cdf",
+      "snapshot_bytes": 11693,
+      "snapshot_sha256": "2d15e6cb94d92f769d44bcb899008f4c4aec1185c16b8470e73f7a7ac1265cdf"
+    },
+    "tests/guard/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/test_registration_launcher.py": {
+      "change": "new release infrastructure; not part of historical acquisition",
+      "origin_bytes": null,
+      "origin_commit": null,
+      "origin_sha256": null,
+      "snapshot_bytes": 17138,
+      "snapshot_sha256": "31ab91e7482d8dd6d0639854f0e6829f0e7970d670d1367e6726b7af428eb5b4"
+    },
+    "tests/twin/__init__.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "change": "unchanged",
+      "origin_bytes": 0,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot_bytes": 0,
+      "snapshot_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "tests/twin/test_phase_diversity.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "242ba65c63a7b61a7c57c94e508dfb5dfc3e44d959a28af9702b1bc5a7d58d0b",
+      "change": "unchanged",
+      "origin_bytes": 7248,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "242ba65c63a7b61a7c57c94e508dfb5dfc3e44d959a28af9702b1bc5a7d58d0b",
+      "snapshot_bytes": 7248,
+      "snapshot_sha256": "242ba65c63a7b61a7c57c94e508dfb5dfc3e44d959a28af9702b1bc5a7d58d0b"
+    },
+    "tests/twin/test_static_mirror.py": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "d0e1d3e01e72f3943f9b917159c4f065408a87ef5545456d92f62d583d6f80df",
+      "change": "unchanged",
+      "origin_bytes": 45667,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "d0e1d3e01e72f3943f9b917159c4f065408a87ef5545456d92f62d583d6f80df",
+      "snapshot_bytes": 45667,
+      "snapshot_sha256": "d0e1d3e01e72f3943f9b917159c4f065408a87ef5545456d92f62d583d6f80df"
+    },
+    "uv.lock": {
+      "acquisition_source_commit": "809196f645cb606524648c926947424d53b04edc",
+      "acquisition_source_sha256": "f9e6e662596cc136b7a5c52c2fb9334917ae6d206e4f5f60263a0da5c733339a",
+      "change": "unchanged",
+      "origin_bytes": 504210,
+      "origin_commit": "420f51c65730bc055de902e019ab493d2cd2dd12",
+      "origin_sha256": "f9e6e662596cc136b7a5c52c2fb9334917ae6d206e4f5f60263a0da5c733339a",
+      "snapshot_bytes": 504210,
+      "snapshot_sha256": "f9e6e662596cc136b7a5c52c2fb9334917ae6d206e4f5f60263a0da5c733339a"
+    }
+  },
+  "schema": "noether-twin-source-map/1",
+  "scope": "Curated source snapshot; historical Git objects and raw acquisition are not included. Eight acquisition-bound files, original tests and environment definitions remain byte-identical. New release infrastructure and modified documentation are explicitly mapped. source-map.json is excluded from its own digest; runtime custody records its digest separately."
+}

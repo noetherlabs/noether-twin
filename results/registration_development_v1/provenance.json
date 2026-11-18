@@ -1,0 +1,46 @@
+{
+  "acquisition_receipt_sha256": "3f56d70c5382a1ab0df7bfd74fc61ccb14d820f0d6a74ab7fc9c6bcdcb995612",
+  "data_availability": "Complete per-unit derived evidence and source/audit identities are included. The 131 MB raw acquisition, its full manifest and operational receipts are retained separately. No partner telemetry is present.",
+  "independent_audit": {
+    "auditor_sha256": "f733a2e1123e558bde774630132ad9bcf0622b0cb496c7b9e5467250bdc56391",
+    "checks": [
+      "complete_raw_custody",
+      "bounded_archives",
+      "exact_unit_and_schedule_coverage",
+      "global_freeze_before_scoring",
+      "solver_trace_and_fallback_reconstruction",
+      "original_seeded_observation_integrity",
+      "all459_prediction_blocks",
+      "all1377_losses_and408_paired_contrasts",
+      "all_reference_sensitivity_labels",
+      "stratified_denominators_and_costs"
+    ],
+    "fit_records": 153,
+    "identity_bound_freeze_sha256": "6488f2e26cd860a29b6262a9634d3e6ff680879b80141e5470baf92dfdbb66cd",
+    "losses": 1377,
+    "max_same_term_sum_difference": 1.7763568394002505e-15,
+    "paired_contrasts": 408,
+    "prediction_blocks": 459,
+    "prospective_freeze_sha256": "7133774b86dfa348e87bdafa31340195b2f59c26ef6ac5759036d903c6d7c421",
+    "receipt_sha256": "5385147996475c143e9a942c91ae57ac96ebdf3c46b2da80d49a97af8ca9ce16",
+    "result_sha256": "883ec5f67fbd8a5a4d650f6806426ed8c70d3d4b829239cc181ebfa2d2eb0928",
+    "scope": "Retained-data and control-flow audit only; no new propagation or fit, log-library accuracy, hardware, global optimum or superiority claim.",
+    "status": "registration_raw_reductions_verified_no_scientific_promotion",
+    "units": 51
+  },
+  "raw_file_count": 790,
+  "raw_manifest_sha256": "5f6ec231731db68574201ecf58618aac0029b08b493b1669597a5d0ad24d7b94",
+  "raw_packet_logical_bytes": 131076499,
+  "schema": "noether-registration-development-provenance-v1",
+  "source_commit": "809196f645cb606524648c926947424d53b04edc",
+  "source_files": {
+    "pyproject.toml": "a27d433d2a5c381eb840bf8aef7e58c6fbda6e5addc31a8c26c1065583b6efa4",
+    "src/noether_optics/bench/twin_development.py": "5db68fb6bd9441da6b313170f2bfab0d08f2fbbdf0cc5038ea2e155a88ea4049",
+    "src/noether_optics/bench/twin_intervention.py": "141124e2c743f98c29bc459ee5a8263ab598b667b31bb0213bdb03784f75e0b9",
+    "src/noether_optics/bench/twin_registration.py": "6e6eef808ed7aa0a3bd717f43d7deacc910277387ba041daf9d12a0704b85605",
+    "src/noether_optics/twin/phase_diversity.py": "5e4cc909cc1f7b4248a54423d89e83c97626c1f7a686839aa27fda13ce6f9099",
+    "src/noether_optics/twin/registration.py": "973bcaa2738139ca43d086cfb40203a799254fcf5d11dc33c28e3951c4c77fed",
+    "src/noether_optics/twin/static_mirror.py": "44fb56d412a4da4ec37c6e7174f08ae0e7a6e793a4f5612c4ed3bc00ceebd9fc",
+    "uv.lock": "f9e6e662596cc136b7a5c52c2fb9334917ae6d206e4f5f60263a0da5c733339a"
+  }
+}
